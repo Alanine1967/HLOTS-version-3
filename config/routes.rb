@@ -1,4 +1,6 @@
 HomicideSite::Application.routes.draw do
+  root to: "entrance#home"
+
   devise_for :users
 
   # The priority is based upon order of creation:
