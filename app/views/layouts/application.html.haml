@@ -1,7 +1,7 @@
 !!!
 %html
 	%head
-		%title= "HomicideSite | #{@title}"
+		%title= "Homicide Life on the Street | #{@title}"
 		= stylesheet_link_tag "application", media: "all"
 		= javascript_include_tag "application"
 		= csrf_meta_tags
@@ -14,5 +14,6 @@
 				%ul
 					%li= link_to "Home", root_path
 					%li= link_to "Contact", root_path
+					%li= link_to "Seasons", seasons_path
 			%div{id: "main" }
 				= yield

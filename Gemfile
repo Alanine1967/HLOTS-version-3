@@ -1,14 +1,26 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
+gem 'thin'
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3', group: :development
+gem 'sqlite3', group: [:development, :test]
 gem 'pg', group: :production
 
-
+group :test do
+  gem "rspec-rails", ">= 2.0.1"
+  gem 'webrat'
+  gem 'spork'
+  gem 'autotest'
+  gem "autotest-rails-pure", "~> 4.1.2"
+  gem 'autotest-fsevent'
+  gem 'autotest-growl'
+  gem 'factory_girl_rails'
+  gem 'simplecov', require: false
+end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -42,4 +54,3 @@ gem "devise"
 gem "haml", ">= 3.0.0"
 gem "haml-rails"
 gem "jquery-rails"
-gem "rspec-rails", ">= 2.0.1", :group => [:development, :test]

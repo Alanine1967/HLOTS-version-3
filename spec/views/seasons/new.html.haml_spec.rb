@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe "entrance/home.html.haml" do
+describe "seasons/new.html.haml" do
   pending "add some examples to (or delete) #{__FILE__}"
 end
