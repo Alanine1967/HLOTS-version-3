@@ -1,4 +1,6 @@
 HomicideSite::Application.routes.draw do
+  resources :seasons
+
   devise_for :users
   
 
