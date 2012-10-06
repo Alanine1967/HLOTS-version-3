@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe 'visiting the homepage' do
   before do
+    pending
     visit '/'
   end
 
