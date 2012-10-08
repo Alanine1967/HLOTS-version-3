@@ -1,11 +1,16 @@
 !!!
 %html
 	%head
-		%title= "Homicide Life on the Street | #{@title}"
+		%title= "Homicide Life on the Street | #{@page_title}"
 		= stylesheet_link_tag "application", media: "all"
 		= javascript_include_tag "application"
 		= csrf_meta_tags
-	%body
-		- if notice
-			= notice
-		= yield
+	%body{ class: controller.controller_name }
+		#banner
+			= image_tag("sign.jpg")
+			.banner_title Homicide Life on the Street
+		#columns
+			#side
+				= link_to "Home", root_path
+			#main
+				= yield

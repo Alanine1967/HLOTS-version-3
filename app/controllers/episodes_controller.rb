@@ -1,17 +1,20 @@
 class EpisodesController < ApplicationController
   respond_to :html, :json
-  before_filter :season, only: :index
+  before_filter :season, only:  [:index, :new, :create]
   
   def index
+    @page_title = "Episodes"
     @episodes = @season.episodes
   end
 
   def show
     @episode = Episode.find(params[:id])
+    @page_title = "Episode #{@episode.number}"
   end
   
   def edit
     @episode = Episode.find(params[:id])
+    @page_title = "Episode #{@episode.number}"
   end
   
   def update
@@ -32,7 +35,9 @@ class EpisodesController < ApplicationController
   end
   
   def destroy
-    
+    episode = Season.episodes.find(params[:id])
+    episode.destroy
+    redirect_to season_episodes_url(@season)
   end
   
   protected

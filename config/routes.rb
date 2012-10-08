@@ -1,5 +1,7 @@
 HomicideSite::Application.routes.draw do
   
+  root to: "home#home"
+
   resources :seasons, shallow: true do
     resources :episodes
   end

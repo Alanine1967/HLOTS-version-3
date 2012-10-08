@@ -2,12 +2,13 @@ class SeasonsController < ApplicationController
   respond_to :html, :json
   
   def index
-    @title = "Seasons"
+    @page_title = "Seasons"
     @seasons = Season.all
   end
 
   def edit
     @season = Season.find(params[:id])
+    @page_title = "Season #{@season.number}"
   end
   
   def update
