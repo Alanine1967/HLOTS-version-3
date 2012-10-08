@@ -1,5 +1,8 @@
 HomicideSite::Application.routes.draw do
-  resources :seasons
+  
+  resources :seasons, shallow: true do
+    resources :episodes
+  end
 
   devise_for :users
   

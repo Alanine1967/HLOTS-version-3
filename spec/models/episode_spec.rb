@@ -9,6 +9,7 @@
 #  synopsis    :text
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  season_id   :integer
 #
 
 require 'spec_helper'

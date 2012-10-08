@@ -1,0 +1,14 @@
+= form_for [@season, episode] do |f|
+	= f.label :number
+	= f.number_field :number
+	%br
+	= f.label :title
+	= f.text_field :title
+	%br
+	= f.label :first_shown
+	= f.date_select :first_shown
+	%br
+	= f.label :synopsis
+	= f.text_area :synopsis
+	%br
+	= f.submit "Create"
