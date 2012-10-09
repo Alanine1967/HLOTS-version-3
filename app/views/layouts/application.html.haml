@@ -9,8 +9,12 @@
 		#banner
 			= image_tag("sign.jpg")
 			.banner_title Homicide Life on the Street
-		#columns
-			#side
-				= link_to "Home", root_path
-			#main
-				= yield
+			.navigation_links
+				= link_to "home", root_path
+				\|
+				= link_to "Seasons", seasons_path
+		#main_content
+			#columns
+				#side
+				#main
+					= yield
