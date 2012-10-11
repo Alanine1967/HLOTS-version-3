@@ -22,15 +22,21 @@ class EpisodesController < ApplicationController
     if @episode.update_attributes(params[:episode])
       redirect_to @episode, notice: 'Episode was successfully updated'
     else
-      render action: "edit"
+      redirect_to action: "edit"
     end
   end
-
+  
+  def new
+    @episode = @season.episodes.new(params[:episode])
+    @page_title = "Episodes"
+  end
+  
   def create
-    if episode.save
+    @episode = @season.episodes.new(params[:episode])
+    if @episode.save
       redirect_to action: "index", notice: "Episode created!"
     else
-      render action: "new"
+      redirect_to action: "new"
     end
   end
   
@@ -45,9 +51,4 @@ class EpisodesController < ApplicationController
     def season
       @season = Season.find(params[:season_id])
     end
-    
-    def episode
-      @episode ||= @season.episodes.build(params[:episode])
-    end   
-    helper_method :episode
 end

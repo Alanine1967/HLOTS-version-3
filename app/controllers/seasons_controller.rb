@@ -2,8 +2,8 @@ class SeasonsController < ApplicationController
   respond_to :html, :json
   
   def index
-    @page_title = "Seasons"
     @seasons = Season.all
+    @page_title = "Seasons"
   end
 
   def edit
@@ -14,10 +14,14 @@ class SeasonsController < ApplicationController
   def update
     season = Season.find(params[:id])
     if season.update_attributes(params[:season])
-      redirect_to seasons_path, notice: "Season successfully updated!"
+      redirect_to seasons_url, notice: "Season successfully updated!"
     else
       respond_with(render action: "edit")
     end
+  end
+  
+  def new
+    @page_title = "Seasons"
   end
 
   def create
@@ -25,7 +29,7 @@ class SeasonsController < ApplicationController
       flash[:notice] = "The season was saved successfully"
       redirect_to action: "index"
     else
-      render action: "new"
+      redirect_to action: "new"
     end
   end
   

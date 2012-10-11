@@ -20,7 +20,6 @@ describe Episode do
   it { should validate_presence_of(:title) }
   it { should validate_presence_of(:synopsis) }
   it { should validate_numericality_of(:number) }
-  it { should validate_uniqueness_of(:first_shown) }
   it "should be valid with valid attributes" do
     episode = Episode.new(number: 1, title: "bugs", first_shown: 1991-10-1,
                           synopsis: "an episode")

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121006165209) do
+ActiveRecord::Schema.define(:version => 20121011215524) do
 
   create_table "episodes", :force => true do |t|
     t.integer  "number"
@@ -40,6 +40,16 @@ ActiveRecord::Schema.define(:version => 20121006165209) do
   add_index "participants", ["first_name"], :name => "index_participants_on_first_name"
   add_index "participants", ["role"], :name => "index_participants_on_role"
   add_index "participants", ["surname"], :name => "index_participants_on_surname"
+
+  create_table "roles", :force => true do |t|
+    t.integer  "episode_id"
+    t.integer  "participant_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "roles", ["episode_id"], :name => "index_roles_on_episode_id"
+  add_index "roles", ["participant_id"], :name => "index_roles_on_participant_id"
 
   create_table "seasons", :force => true do |t|
     t.integer  "number"

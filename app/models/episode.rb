@@ -16,6 +16,7 @@ class Episode < ActiveRecord::Base
   attr_accessible :first_shown, :number, :synopsis, :title, :season_id
   validates_presence_of :first_shown, :number, :synopsis, :title
   validates :number, numericality: { greater_than: 0, only_integer: true}
-  validates_uniqueness_of :first_shown
   belongs_to :season
+  has_many :roles
+  has_many :participants, through: :roles
 end

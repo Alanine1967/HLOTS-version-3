@@ -1,11 +1,29 @@
 HomicideSite::Application.routes.draw do
   
+  get "participants/index"
+
+  get "participants/new"
+
+  get "participants/create"
+
+  get "participants/edit"
+
+  get "participants/update"
+
+  get "participants/show"
+
+  get "participants/destroy"
+
   root to: "home#home"
 
-  resources :seasons, shallow: true do
+  resources :seasons, except: [:show], shallow: true do
     resources :episodes
   end
-
+  
+  resources :episodes, only: [], shallow: true do
+    resources :participants
+  end
+  
   devise_for :users
   
 
