@@ -5,6 +5,7 @@ gem "devise"
 gem "haml", ">= 3.0.0"
 gem "haml-rails"
 gem "jquery-rails"
+gem 'thin'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -14,7 +15,6 @@ end
 
 group :development do
   gem 'sqlite3'
-  gem 'thin'
   gem "rspec-rails", ">= 2.0.1"
   gem "capybara"
 end
