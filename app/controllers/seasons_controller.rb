@@ -29,7 +29,7 @@ class SeasonsController < ApplicationController
       flash[:notice] = "The season was saved successfully"
       redirect_to action: "index"
     else
-      redirect_to action: "new"
+      render action: "new"
     end
   end
   

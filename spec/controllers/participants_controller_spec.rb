@@ -1,11 +1,15 @@
 require 'spec_helper'
 
 describe ParticipantsController do
-
+  before(:each) do
+    @participant = FactoryGirl.create(:participant)
+    @attr = FactoryGirl.attributes_for(:participant)
+  end
+  
   describe "GET 'index'" do
-    it "returns http success" do
-      get 'index'
-      response.should be_success
+    it "should render index" do
+      get :index, episode_id: @attr
+      response.should render_template :index
     end
   end
 

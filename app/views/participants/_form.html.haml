@@ -1,0 +1,20 @@
+= form_for [@episode, @participant] do |f|
+	= f.label :role
+	= f.text_field :role, length: 30
+	%br
+	= f.label :first_name
+	= f.text_field :first_name, length: 30
+	%br
+	= f.label :middle_name
+	= f.text_field :middle_name, length: 30
+	%br
+	= f.label :surname
+	= f.text_field :surname, length: 30
+	%br
+	= f.label :cast
+	= f.check_box :cast
+	%br
+	= f.label :biography
+	= f.text_area :biography, size: "30x20"
+	%br
+	= f.submit "Create"

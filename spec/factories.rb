@@ -14,4 +14,10 @@ FactoryGirl.define do
     year 1993
     id 1
   end
+  
+  factory :participant do
+    association :episode
+    role "Pippy dog"
+    surname "Churchill"
+  end
 end

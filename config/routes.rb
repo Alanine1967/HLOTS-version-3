@@ -1,18 +1,4 @@
 HomicideSite::Application.routes.draw do
-  
-  get "participants/index"
-
-  get "participants/new"
-
-  get "participants/create"
-
-  get "participants/edit"
-
-  get "participants/update"
-
-  get "participants/show"
-
-  get "participants/destroy"
 
   root to: "home#home"
 

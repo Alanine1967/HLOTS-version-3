@@ -1,4 +1,3 @@
-%h1 Episode
 %p
 	.field_label Number:
 	= @episode.number
@@ -11,3 +10,40 @@
 %p
 	.field_label Synopsis
 	= @episode.synopsis
+
+- unless @cast.empty?
+	%h2 Cast
+	%table
+		%tr
+			%th Character
+			%th Actor's name
+			%th
+			%th
+			%th
+		- @cast.each do |cast|
+			%tr
+				%td= cast.role
+				%td= "#{cast.first_name} #{cast.surname}"
+				%td= link_to "Show", participant_path(cast)
+				%td= link_to "Edit", edit_participant_path(cast)
+				%td= link_to "Delete", cast, method: :delete,
+																			confirm: "Are you sure?"
+- unless @crew.empty?
+	%h2 Crew
+	%table
+		%tr
+			%th Position
+			%th Name
+			%th
+			%th
+			%th
+		- @crew.each do |crew|
+			%tr
+				%td= crew.role
+				%td= "#{crew.first_name} #{crew.surname}"
+				%td= link_to "Show", participant_path(crew)
+				%td= link_to "Edit", edit_participant_path(crew)
+				%td= link_to "Delete", crew, method: :delete,
+																			confirm: "Are you sure?"
+
+= link_to "Add cast or crew", new_episode_participant_path(@episode)

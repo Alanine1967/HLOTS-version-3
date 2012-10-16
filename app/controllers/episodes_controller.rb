@@ -10,6 +10,15 @@ class EpisodesController < ApplicationController
   def show
     @episode = Episode.find(params[:id])
     @page_title = "Episode #{@episode.number}"
+    @cast = []
+    @crew = []
+    @episode.participants.each do |participant|
+      if participant.cast
+        @cast << participant
+      else
+        @crew << participant
+      end
+    end
   end
   
   def edit
@@ -22,7 +31,7 @@ class EpisodesController < ApplicationController
     if @episode.update_attributes(params[:episode])
       redirect_to @episode, notice: 'Episode was successfully updated'
     else
-      redirect_to action: "edit"
+      render action: "edit"
     end
   end
   
@@ -36,14 +45,14 @@ class EpisodesController < ApplicationController
     if @episode.save
       redirect_to action: "index", notice: "Episode created!"
     else
-      redirect_to action: "new"
+      render action: "new"
     end
   end
   
   def destroy
-    episode = Season.episodes.find(params[:id])
+    episode = Episode.find(params[:id])
     episode.destroy
-    redirect_to season_episodes_url(@season)
+    redirect_to season_episodes_url
   end
   
   protected

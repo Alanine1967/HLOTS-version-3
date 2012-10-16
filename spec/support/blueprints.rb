@@ -12,3 +12,8 @@ Episode.blueprint do
   title { "the title" }
   season
 end
+
+Participant.blueprint do
+  role { "Pippy" }
+  surname { "Dog" }
+end
