@@ -9,13 +9,18 @@
 		#banner
 			= image_tag("sign.jpg")
 			.banner_title Homicide Life on the Street
-			.navigation_links
-				= link_to "home", root_path
-				\|
-				= link_to "Seasons", seasons_path
 		#main_content
 			#columns
 				#side
+					.navigation_links
+						= link_to "Home", root_path
+						%br
+						= link_to "Seasons", seasons_path
+						%br
+						- if user_signed_in?
+							= link_to "Logout", destroy_user_session_path, method: :delete
+						- else
+							= link_to "Admin - login", user_session_path
 				#main
 					- if notice
 						%p#notice= notice

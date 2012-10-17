@@ -1,5 +1,6 @@
 class SeasonsController < ApplicationController
   respond_to :html, :json
+  before_filter :authenticate_user!, except: :index
   
   def index
     @seasons = Season.all

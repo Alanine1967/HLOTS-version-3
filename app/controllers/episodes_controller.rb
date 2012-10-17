@@ -1,6 +1,7 @@
 class EpisodesController < ApplicationController
   respond_to :html, :json
   before_filter :season, only:  [:index, :new, :create]
+  before_filter :authenticate_user!, except: [:index, :show]
   
   def index
     @page_title = "Season #{@season.number}"

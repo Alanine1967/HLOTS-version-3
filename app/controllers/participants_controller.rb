@@ -1,6 +1,7 @@
 class ParticipantsController < ApplicationController
   respond_to :html, :json
   before_filter :episode, only: [:index, :new, :create]
+  before_filter :authenticate_user!, except: [:index, :show]
   
   def index
     @page_title = "Cast & Crew"

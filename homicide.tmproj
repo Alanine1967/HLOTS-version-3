@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>config/routes.rb</string>
+	<string>app/assets/stylesheets/application.css.sass</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -26,9 +26,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>12</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>33</integer>
+				<integer>7</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -68,14 +68,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>14</integer>
+				<integer>21</integer>
 				<key>line</key>
-				<integer>59</integer>
+				<integer>57</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>6</integer>
 		</dict>
 		<key>app/assets/stylesheets/episodes.css.sass</key>
 		<dict>
@@ -152,14 +152,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>35</integer>
+				<integer>51</integer>
 				<key>line</key>
-				<integer>45</integer>
+				<integer>54</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>9</integer>
 		</dict>
 		<key>app/controllers/home_controller.rb</key>
 		<dict>
@@ -180,9 +180,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>31</integer>
+				<integer>45</integer>
 				<key>line</key>
-				<integer>2</integer>
+				<integer>45</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -194,9 +194,23 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>17</integer>
+				<integer>12</integer>
 				<key>line</key>
 				<integer>31</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/helpers/episodes_helper.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>0</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -222,9 +236,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>37</integer>
+				<integer>33</integer>
 				<key>line</key>
-				<integer>20</integer>
+				<integer>17</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -250,9 +264,65 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>53</integer>
+				<integer>41</integer>
 				<key>line</key>
-				<integer>16</integer>
+				<integer>17</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/models/user.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/views/devise/confirmations/new.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/views/devise/registrations/new.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/views/devise/sessions/new.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>0</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -278,9 +348,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>15</integer>
+				<integer>29</integer>
 				<key>line</key>
-				<integer>2</integer>
+				<integer>1</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -292,30 +362,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>35</integer>
-				<key>line</key>
-				<integer>16</integer>
-			</dict>
-			<key>columnSelection</key>
-			<false/>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
 				<integer>28</integer>
 				<key>line</key>
 				<integer>16</integer>
 			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>35</integer>
-				<key>line</key>
-				<integer>16</integer>
-			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
 		</dict>
 		<key>app/views/episodes/new.html.haml</key>
 		<dict>
@@ -336,9 +390,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>67</integer>
+				<integer>36</integer>
 				<key>line</key>
-				<integer>14</integer>
+				<integer>13</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -366,21 +420,63 @@
 				<key>column</key>
 				<integer>6</integer>
 				<key>line</key>
-				<integer>13</integer>
+				<integer>19</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>app/views/participants/index.html.haml</key>
+		<key>app/views/participants/_form.html.haml</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>23</integer>
 				<key>line</key>
 				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/views/participants/edit.html.haml</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>15</integer>
+				<key>line</key>
+				<integer>2</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/views/participants/new.html.haml</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>15</integer>
+				<key>line</key>
+				<integer>2</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/views/participants/show.html.haml</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>52</integer>
+				<key>line</key>
+				<integer>10</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -448,14 +544,30 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>67</integer>
+			</dict>
+			<key>columnSelection</key>
+			<false/>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>26</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
 				<integer>50</integer>
 				<key>line</key>
 				<integer>67</integer>
 			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>67</integer>
+			</dict>
 		</dict>
 		<key>config/database.yml</key>
 		<dict>
@@ -487,6 +599,34 @@
 				<integer>21</integer>
 			</dict>
 		</dict>
+		<key>config/environments/development.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>73</integer>
+				<key>line</key>
+				<integer>18</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>config/initializers/devise.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>35</integer>
+		</dict>
 		<key>config/initializers/inflections.rb</key>
 		<dict>
 			<key>caret</key>
@@ -506,9 +646,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>2</integer>
 				<key>line</key>
-				<integer>1</integer>
+				<integer>4</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -627,6 +767,20 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
+		<key>log/production.log</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 		<key>log/test.log</key>
 		<dict>
 			<key>caret</key>
@@ -646,28 +800,28 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>13</integer>
+				<integer>31</integer>
 				<key>line</key>
-				<integer>62</integer>
+				<integer>65</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>15</integer>
 		</dict>
 		<key>spec/controllers/participants_controller_spec.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>35</integer>
+				<integer>44</integer>
 				<key>line</key>
-				<integer>10</integer>
+				<integer>60</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>12</integer>
 		</dict>
 		<key>spec/controllers/seasons_controller_spec.rb</key>
 		<dict>
@@ -676,21 +830,21 @@
 				<key>column</key>
 				<integer>14</integer>
 				<key>line</key>
-				<integer>40</integer>
+				<integer>5</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>1</integer>
+			<integer>24</integer>
 		</dict>
 		<key>spec/factories.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>17</integer>
+				<integer>12</integer>
 				<key>line</key>
-				<integer>18</integer>
+				<integer>5</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -837,8 +991,11 @@
 		<string>app/assets/stylesheets/home.css.sass</string>
 		<string>app/assets/stylesheets/participants.css.sass</string>
 		<string>Gemfile</string>
+		<string>config/initializers/devise.rb</string>
 		<string>config/database.yml</string>
+		<string>log/production.log</string>
 		<string>spec/controllers/episodes_controller_spec.rb</string>
+		<string>config/environments/development.rb</string>
 		<string>spec/controllers/participants_controller_spec.rb</string>
 		<string>db/migrate/20121011215524_create_roles.rb</string>
 		<string>spec/support/blueprints.rb</string>
@@ -852,6 +1009,7 @@
 		<string>db/migrate/20121006090148_create_participants.rb</string>
 		<string>spec/models/participant_spec.rb</string>
 		<string>app/models/participant.rb</string>
+		<string>app/views/participants/_form.html.haml</string>
 		<string>spec/models/episode_spec.rb</string>
 		<string>app/controllers/seasons_controller.rb</string>
 		<string>app/views/seasons/_form.html.haml</string>
@@ -871,20 +1029,27 @@
 		<string>db/migrate/20121005140158_create_seasons.rb</string>
 		<string>db/migrate/20121005104919_devise_create_users.rb</string>
 		<string>config/routes.rb</string>
+		<string>app/views/devise/confirmations/new.html.erb</string>
+		<string>app/views/devise/sessions/new.html.erb</string>
+		<string>app/views/devise/registrations/new.html.erb</string>
 		<string>db/migrate/20121006165209_add_seasonid_to_episodes.rb</string>
 		<string>spec/factories.rb</string>
 		<string>app/models/role.rb</string>
+		<string>app/views/participants/new.html.haml</string>
 		<string>app/controllers/episodes_controller.rb</string>
 		<string>app/controllers/participants_controller.rb</string>
-		<string>app/views/participants/index.html.haml</string>
+		<string>app/models/user.rb</string>
+		<string>app/views/participants/edit.html.haml</string>
 		<string>app/views/episodes/index.html.haml</string>
 		<string>app/views/episodes/new.html.haml</string>
 		<string>app/views/episodes/_form.html.haml</string>
+		<string>app/helpers/episodes_helper.rb</string>
 		<string>app/views/episodes/show.html.haml</string>
+		<string>app/views/participants/show.html.haml</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<false/>
 	<key>windowFrame</key>
-	<string>{{819, 14}, {844, 1011}}</string>
+	<string>{{825, 17}, {844, 1011}}</string>
 </dict>
 </plist>
