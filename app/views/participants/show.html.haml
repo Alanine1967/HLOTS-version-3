@@ -7,5 +7,6 @@
 %p
 	.field_label Biography:
 	= @participant.biography
-	
-= link_to "Edit", edit_participant_path(@participant)
+
+- if user_signed_in?	
+	= link_to "Edit", edit_participant_path(@participant)

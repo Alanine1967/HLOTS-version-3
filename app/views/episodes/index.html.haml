@@ -7,14 +7,14 @@
 			%th title
 			%th
 			%th
-			%th
 		- @episodes.each do |episode|
 			%tr
 				%td= episode.number
-				%td= episode.title
-				%td= link_to "Show", episode_path(episode)
-				%td= link_to "Edit", edit_episode_path(episode)
-				%td= link_to "Destroy", episode, method: :delete, 
-																				confirm: "Are you sure?"
+				%td= link_to "#{episode.title}", episode_path(episode)
+				- if user_signed_in?
+					%td= link_to "Edit", edit_episode_path(episode)
+					%td= link_to "Destroy", episode, method: :delete, 
+																					confirm: "Are you sure?"
 
-= link_to "Add a new episode", new_season_episode_path(@season)
+- if user_signed_in?
+	= link_to "Add a new episode", new_season_episode_path(@season)

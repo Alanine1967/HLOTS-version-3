@@ -26,7 +26,8 @@
 				%td= cast.role
 				%td= "#{cast.first_name} #{cast.surname}"
 				%td= link_to "Show", participant_path(cast)
-				%td= link_to "Delete", cast, method: :delete,
+				- if user_signed_in?
+					%td= link_to "Delete", cast, method: :delete,
 																			confirm: "Are you sure?"
 - unless @crew.empty?
 	%h2 Crew
@@ -41,7 +42,8 @@
 				%td= crew.role
 				%td= "#{crew.first_name} #{crew.surname}"
 				%td= link_to "Show", participant_path(crew)
-				%td= link_to "Delete", crew, method: :delete,
+				- if user_signed_in?
+					%td= link_to "Delete", crew, method: :delete,
 																			confirm: "Are you sure?"
-
-= link_to "Add cast or crew", new_episode_participant_path(@episode)
+- if user_signed_in?
+	= link_to "Add cast or crew", new_episode_participant_path(@episode)

@@ -6,7 +6,7 @@
 	= f.text_field :title
 	%br
 	= f.label :first_shown
-	= f.date_select :first_shown
+	= f.date_select :first_shown, start_year: 1993, end_year: 2000
 	%br
 	= f.label :synopsis
 	= f.text_area :synopsis
