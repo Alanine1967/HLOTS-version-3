@@ -3,7 +3,7 @@ class EpisodesController < ApplicationController
   before_filter :season, only:  [:index, :new, :create]
   
   def index
-    @page_title = "Episodes"
+    @page_title = "Season #{@season.number}"
     @episodes = @season.episodes
   end
 
@@ -37,7 +37,7 @@ class EpisodesController < ApplicationController
   
   def new
     @episode = @season.episodes.new(params[:episode])
-    @page_title = "Episodes"
+    @page_title = "Season #{@season.number}"
   end
   
   def create
@@ -52,7 +52,7 @@ class EpisodesController < ApplicationController
   def destroy
     episode = Episode.find(params[:id])
     episode.destroy
-    redirect_to season_episodes_url
+    redirect_to season_episodes_url(params[:episode])
   end
   
   protected

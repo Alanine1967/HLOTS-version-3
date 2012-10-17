@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe EpisodesController do
   before(:each) do
+    @season = Season.make!
     @episode = Episode.make!
     @attr = FactoryGirl.attributes_for(:episode)
   end
@@ -48,21 +49,21 @@ describe EpisodesController do
       response.should render_template :new
     end
     it "should set @page_title" do
-      pending
       get :new, season_id: @episode
-      assigns(:page_title).should eq("Episode #{@episode.number}")
+      assigns(:page_title).should eq("Season #{@season.number}")
     end
   end
   
   describe "POST create" do
     it "should save episode" do
-      pending
-      expect { post :create, season_id: @attr }.to change(Episode, :count).by(1)
+      expect { post :create, season_id: @season, 
+                episode: @attr }.to change(Episode, :count).by(1)
     end
-    it "should redirect to index" do
-      pending
-      post :create, season_id: @episode
-      response.should render_template :index
+  end
+  
+  describe "DELETE destroy" do
+    it "should delete the episode" do
+      expect { @episode.destroy }.to change(Episode, :count).by(-1)
     end
   end
 end

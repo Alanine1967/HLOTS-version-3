@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: roles
+#
+#  id             :integer          not null, primary key
+#  episode_id     :integer
+#  participant_id :integer
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
+
 require 'spec_helper'
 
 describe Role do

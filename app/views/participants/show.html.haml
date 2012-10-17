@@ -1,2 +1,11 @@
-%h1 Participants#show
-%p Find me in app/views/participants/show.html.haml
+%p
+	.field_label Role:
+	= @participant.role
+%p
+	.field_label Name:
+	= "#{@participant.first_name} #{@participant.surname}"
+%p
+	.field_label Biography:
+	= @participant.biography
+	
+= link_to "Edit", edit_participant_path(@participant)

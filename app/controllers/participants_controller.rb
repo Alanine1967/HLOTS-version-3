@@ -8,7 +8,7 @@ class ParticipantsController < ApplicationController
 
   def new
     @participant = @episode.participants.new(params[:participant])
-    @page_title = "Cast & Crew"
+    @page_title = "Episode #{@episode.number} - Cast & Crew"
   end
 
   def create
@@ -22,15 +22,28 @@ class ParticipantsController < ApplicationController
   end
 
   def edit
+    @participant = Participant.find(params[:id])
+    @page_title = "Edit Cast & Crew"
   end
 
   def update
+    @participant = Participant.find(params[:id])
+    if @participant.update_attributes(params[:participant])
+      redirect_to @participant, notice: 'Successfully updated!'
+    else
+      render action:edit
+    end
   end
 
   def show
+    @participant = Participant.find(params[:id])
+    @page_title = "Cast & Crew"
   end
 
   def destroy
+    participant = Participant.find(params[:id])
+    participant.destroy
+    redirect_to episode_url(session[:episode_id])
   end
   
   protected

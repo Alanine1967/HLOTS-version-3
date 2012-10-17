@@ -15,5 +15,5 @@ class Season < ActiveRecord::Base
   validates_uniqueness_of :number
   validates_numericality_of :number, only_integer: true, greater_than: 0
   validates_numericality_of :year, only_integer: true
-  has_many :episodes
+  has_many :episodes, dependent: :destroy
 end

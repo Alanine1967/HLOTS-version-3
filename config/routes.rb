@@ -1,5 +1,8 @@
 HomicideSite::Application.routes.draw do
-
+  authenticated :user do
+    root to: "home#home"
+  end
+  
   root to: "home#home"
 
   resources :seasons, except: [:show], shallow: true do

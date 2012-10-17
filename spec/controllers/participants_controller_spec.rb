@@ -2,56 +2,64 @@ require 'spec_helper'
 
 describe ParticipantsController do
   before(:each) do
-    @participant = FactoryGirl.create(:participant)
+    @episode = Episode.make!
+    @participant = Participant.make!
     @attr = FactoryGirl.attributes_for(:participant)
-  end
-  
-  describe "GET 'index'" do
-    it "should render index" do
-      get :index, episode_id: @attr
-      response.should render_template :index
-    end
   end
 
   describe "GET 'new'" do
-    it "returns http success" do
-      get 'new'
-      response.should be_success
+    it "should render view" do
+      get :new, episode_id: @participant
+      response.should render_template :new
+    end
+    it "should set @page_title" do
+      get :new, episode_id: @participant
+      assigns(:page_title).should 
+                          eq("Episode #{@episode.number} - Cast & Crew")
     end
   end
 
-  describe "GET 'create'" do
-    it "returns http success" do
-      get 'create'
-      response.should be_success
+  describe "POST create" do
+    it "should save participant" do
+      expect { post :create, episode_id: @episode,
+                participant: @attr }.to change(Participant, :count).by(1)
     end
   end
 
   describe "GET 'edit'" do
-    it "returns http success" do
-      get 'edit'
-      response.should be_success
+    it "should render edit" do
+      get :edit, id: @participant
+      response.should render_template :edit
+    end
+    it "should set @page_title" do
+      get :edit, id: @participant
+      assigns(:page_title).should 
+                          eq("Edit Cast & Crew")
     end
   end
 
-  describe "GET 'update'" do
-    it "returns http success" do
-      get 'update'
-      response.should be_success
+  describe "POST 'update'" do
+    it "should redirect to episodes#show" do
+      put :update, id: @participant
+      response.should render_template @episode
     end
   end
 
   describe "GET 'show'" do
-    it "returns http success" do
-      get 'show'
-      response.should be_success
+    it "should render show" do
+      get :show, id: @participant
+      response.should render_template :show
+    end
+    it "should set @page_title" do
+      get :show, id: @participant
+      assigns(:page_title).should eq("Cast & Crew")
     end
   end
 
-  describe "GET 'destroy'" do
-    it "returns http success" do
-      get 'destroy'
-      response.should be_success
+  describe "DELETE 'destroy'" do
+    it "should delete the episode" do
+      session[:episode_id] = @participant.id
+      expect { delete :destroy, id: @participant }.to change(Participant, :count).by(-1)
     end
   end
 
