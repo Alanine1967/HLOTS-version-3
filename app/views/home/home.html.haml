@@ -1,3 +1,11 @@
+- content_for :sidebar do
+	- seasons.each do |season|
+		.sidebar_link
+			= link_to "Season #{season.number}", season_path(season)
+			%br
+	- if user_signed_in?
+		= link_to "Add a new season", new_season_path
+
 %section
-	%header The HLOTS Database
+	%h3 The HLOTS Database
 	%p This is a very early work in progress. The aim is to create a comprehensive database of the classic 90's show.

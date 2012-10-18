@@ -5,7 +5,7 @@ HomicideSite::Application.routes.draw do
   
   root to: "home#home"
 
-  resources :seasons, except: [:show], shallow: true do
+  resources :seasons, except: [:index], shallow: true do
     resources :episodes
   end
   

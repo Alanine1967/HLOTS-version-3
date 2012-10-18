@@ -7,13 +7,6 @@ describe EpisodesController do
     @attr = FactoryGirl.attributes_for(:episode)
   end
 
-  describe "GET 'index'" do
-    it "should render index" do
-      get :index, season_id: @episode
-      response.should render_template :index
-    end
-  end
-
   describe "GET 'show'" do
     it "should render show" do
       get :show, id: @episode

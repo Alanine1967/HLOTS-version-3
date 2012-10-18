@@ -1,49 +1,38 @@
-%p
-	.field_label Number:
-	= @episode.number
-%p 
-	.field_label Title:
-	= @episode.title
-%p
-	.field_label First Shown
-	= @episode.first_shown
+- content_for :sidebar do
+	%p
+		.field_label Episode:
+		= episode.number
+	%p 
+		.field_label Title:
+		= episode.title
+	%p
+		.field_label First Shown
+		= episode.first_shown
 %p
 	.field_label Synopsis
-	= @episode.synopsis
+	= episode.synopsis
 
-- session[:episode_id] = @episode.id
+- session[:episode_id] = episode.id
 
-- unless @cast.empty?
-	%h2 Cast
+- unless actors.empty?
+	%h3 Cast
 	%table
 		%tr
 			%th Character
 			%th Actor's name
 			%th
 			%th
-		- @cast.each do |cast|
-			%tr
-				%td= cast.role
-				%td= "#{cast.first_name} #{cast.surname}"
-				%td= link_to "Show", participant_path(cast)
-				- if user_signed_in?
-					%td= link_to "Delete", cast, method: :delete,
-																			confirm: "Are you sure?"
-- unless @crew.empty?
-	%h2 Crew
+		= render partial: "actor", collection: actors
+
+- unless artisans.empty?
+	%h3 Crew
 	%table
 		%tr
 			%th Position
 			%th Name
 			%th
 			%th
-		- @crew.each do |crew|
-			%tr
-				%td= crew.role
-				%td= "#{crew.first_name} #{crew.surname}"
-				%td= link_to "Show", participant_path(crew)
-				- if user_signed_in?
-					%td= link_to "Delete", crew, method: :delete,
-																			confirm: "Are you sure?"
+		= render partial: "artisan", collection: artisans
+
 - if user_signed_in?
-	= link_to "Add cast or crew", new_episode_participant_path(@episode)
+	= link_to "Add cast or crew", new_episode_participant_path(episode)

@@ -7,17 +7,16 @@ describe SeasonsController do
     @attr = FactoryGirl.attributes_for(:season)
   end
   
-  describe "GET index" do
-    it "should render index" do
-      get :index
-      response.should render_template :index
+  describe "GET show" do
+    it "should render show" do
+      get :show, id: @season
+      response.should render_template :show
     end
     it "should set @page_title" do
-      get :index
-      assigns(:page_title).should eq("Seasons")
+      get :show, id: @season
+      assigns(:page_title).should eq("Season #{@season.number}")
     end
   end
-     
   describe "GET edit" do
     it "should render edit" do
       get :edit, id: @season

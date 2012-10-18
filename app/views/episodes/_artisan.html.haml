@@ -1,0 +1,7 @@
+%tr
+	%td= artisan.role
+	%td= full_name(artisan)
+	%td= link_to "Show", participant_path(artisan)
+	- if user_signed_in?
+		%td= link_to "Delete", artisan, method: :delete,
+																confirm: "Are you sure?"

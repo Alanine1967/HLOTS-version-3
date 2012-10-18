@@ -1,5 +1,3 @@
 class HomeController < ApplicationController
-  def home
-    @page_title = "Home"
-  end
+	expose(:seasons)
 end

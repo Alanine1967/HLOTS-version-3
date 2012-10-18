@@ -1,0 +1,7 @@
+%tr
+%td= actor.role
+%td= full_name(actor)
+%td= link_to "Show", participant_path(actor)
+- if user_signed_in?
+	%td= link_to "Delete", actor, method: :delete,
+															confirm: "Are you sure?"

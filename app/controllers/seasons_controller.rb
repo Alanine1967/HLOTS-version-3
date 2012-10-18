@@ -1,50 +1,26 @@
 class SeasonsController < ApplicationController
-  respond_to :html, :json
-  before_filter :authenticate_user!, except: :index
-  
-  def index
-    @seasons = Season.all
-    @page_title = "Seasons"
-  end
+  before_filter :authenticate_user!, except: :show
+  expose(:season)
+  expose(:episodes) { season.episodes }
 
-  def edit
-    @season = Season.find(params[:id])
-    @page_title = "Season #{@season.number}"
-  end
-  
   def update
-    season = Season.find(params[:id])
-    if season.update_attributes(params[:season])
+    if season.save
       redirect_to seasons_url, notice: "Season successfully updated!"
     else
-      respond_with(render action: "edit")
+      redirect_to action: "edit", alert: "Edit failed!"
     end
   end
   
-  def new
-    @page_title = "Seasons"
-  end
-
   def create
     if season.save
-      flash[:notice] = "The season was saved successfully"
-      redirect_to action: "index"
+      redirect_to root_url, notice: "Season #{season.number} created!"
     else
-      render action: "new"
+      redirect_to action: "new", alert: "Season create failed!"
     end
   end
   
   def destroy
-    season = Season.find(params[:id])
     season.destroy
-    redirect_to seasons_url
+    redirect_to seasons_url, notice: "Season deleted!"
   end
-  
-  protected
-    
-    def season
-      @season ||= Season.new(params[:season])
-    end
-    
-    helper_method :season
 end

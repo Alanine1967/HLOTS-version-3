@@ -1,54 +1,29 @@
 class ParticipantsController < ApplicationController
-  respond_to :html, :json
-  before_filter :episode, only: [:index, :new, :create]
   before_filter :authenticate_user!, except: [:index, :show]
-  
-  def index
-    @page_title = "Cast & Crew"
-  end
-
-  def new
-    @participant = @episode.participants.new(params[:participant])
-    @page_title = "Episode #{@episode.number} - Cast & Crew"
-  end
+  expose(:episodes)
+  expose(:episode)
+  expose(:participants)
+  expose(:participant)
 
   def create
-    @participant = @episode.participants.new(params[:participant])
-    if @participant.save
-      Role.create(episode_id: @episode.id, participant_id: @participant.id)
-      redirect_to episode_path(@episode), notice: "cast/crew created"
+    if participant.save
+      Role.create([episode_id: episode.id, participant_id: participant.id])
+      redirect_to episode_url(episode), notice: "cast/crew created"
     else
-      render action: "new"
+      redirect_to action: "new", alert: "Create failed!"
     end
-  end
-
-  def edit
-    @participant = Participant.find(params[:id])
-    @page_title = "Edit Cast & Crew"
   end
 
   def update
-    @participant = Participant.find(params[:id])
-    if @participant.update_attributes(params[:participant])
-      redirect_to @participant, notice: 'Successfully updated!'
+    if participant.save
+      redirect_to participant, notice: 'Successfully updated!'
     else
-      render action:edit
+      redirect_to action:edit, alert: "Update failed!"
     end
-  end
-
-  def show
-    @participant = Participant.find(params[:id])
-    @page_title = "Cast & Crew"
   end
 
   def destroy
-    participant = Participant.find(params[:id])
     participant.destroy
-    redirect_to episode_url(session[:episode_id])
+    redirect_to episode_url(session[:episode_id]), alert: "Deleted!"
   end
-  
-  protected
-    def episode
-      @episode = Episode.find(params[:episode_id])
-    end
 end

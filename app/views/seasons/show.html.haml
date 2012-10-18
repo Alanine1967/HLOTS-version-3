@@ -1,0 +1,18 @@
+- content_for :sidebar do
+	.sidebar_link= "Season #{season.number}"
+	.sidebar_link= "First Shown #{season.year}"
+
+%h3 Episodes
+
+- session[:season_id] = season.id
+- unless episodes.empty?
+	%table
+		%tr
+			%th number
+			%th title
+			%th
+			%th
+		= render episodes
+
+- if user_signed_in?
+	= link_to "Add a new episode", new_season_episode_path(season)
