@@ -1,7 +1,7 @@
 - content_for :sidebar do
 	%p
 		.field_label Name:
-		= "#{participant.first_name} #{participant.surname}"
+		= full_name(participant)
 	%p
 		.field_label Role:
 		= participant.role
@@ -12,6 +12,8 @@
 	.field_label Appeared in episodes:
 	- episodes.each do |episode|
 		= episode.title
+%br
 
+	= link_to "Back to episode", episode_path(participant.episodes)
 - if user_signed_in?	
 	= link_to "Edit", edit_participant_path(participant)

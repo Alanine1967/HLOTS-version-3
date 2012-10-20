@@ -1,7 +1,8 @@
 %tr
-	%td= artisan.role
-	%td= full_name(artisan)
-	%td= link_to "Show", participant_path(artisan)
+	%td.table_content= artisan.role
+	%td.table_content= link_to full_name(artisan), participant_path(artisan)
+
 	- if user_signed_in?
-		%td= link_to "Delete", artisan, method: :delete,
+		%td.admin_col= link_to "Edit", edit_participant_path(artisan)
+		%td.admin_col= link_to "Delete", artisan, method: :delete,
 																confirm: "Are you sure?"

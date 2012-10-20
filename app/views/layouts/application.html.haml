@@ -6,7 +6,7 @@
 		= javascript_include_tag "application"
 		= csrf_meta_tags
 	%body{ class: controller.controller_name }
-		#banner
+		#banner.rounded
 			= link_to image_tag("sign.jpg"), root_path
 			.banner_title Homicide Life on the Street
 			.navigation_links
@@ -16,7 +16,7 @@
 				- else
 					= link_to "Admin - login", user_session_path
 		#main_content
-			#columns
+			#columns.rounded
 				#side
 					= yield :sidebar
 				#main
@@ -24,5 +24,6 @@
 						#notice= flash.notice
 					- if flash.alert
 						#alert= flash.alert
-					= yield
+					%div{"data-pjax-container" => ""}
+						= yield
 					= debug(params) if Rails.env.development?

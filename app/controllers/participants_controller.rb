@@ -24,6 +24,6 @@ class ParticipantsController < ApplicationController
 
   def destroy
     participant.destroy
-    redirect_to episode_url(session[:episode_id]), alert: "Deleted!"
+    redirect_to root_url, notice: "Deleted!"
   end
 end

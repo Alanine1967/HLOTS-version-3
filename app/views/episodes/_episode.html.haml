@@ -1,7 +1,6 @@
 %tr
-	%td= episode.number
-	%td= link_to "#{episode.title}", episode_path(episode)
+	%td.table_content= episode.number
+	%td.table_content= link_to "#{episode.title}", episode_path(episode)
 	- if user_signed_in?
-		%td= link_to "Edit", edit_episode_path(episode)
-		%td= link_to "Destroy", episode, method: :delete, 
-																		confirm: "Are you sure?"
+		%td.admin_col= link_to "Edit |", edit_episode_path(episode)
+		%td.admin_col= link_to "Destroy", episode, method: :delete, confirm: "Are you sure?"

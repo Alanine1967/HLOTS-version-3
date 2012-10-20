@@ -1,0 +1,14 @@
+%h3 Episodes
+
+- session[:season_id] = season.id
+- unless season.episodes.empty?
+	%table
+		%tr
+			%th number
+			%th title
+			%th
+			%th
+		= render episodes
+
+- if user_signed_in?
+	= link_to "Add a new episode", new_season_episode_path(season)

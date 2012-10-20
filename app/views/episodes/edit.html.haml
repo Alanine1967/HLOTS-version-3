@@ -1,4 +1,4 @@
 h1.main_title name
 %fieldset
 	%legend Edit Episode Details
-	= render 'form'
+	= render partial: 'form', locals: { objects: episode }

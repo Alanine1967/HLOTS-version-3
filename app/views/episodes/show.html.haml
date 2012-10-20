@@ -1,38 +1,25 @@
 - content_for :sidebar do
-	%p
-		.field_label Episode:
-		= episode.number
-	%p 
-		.field_label Title:
-		= episode.title
-	%p
-		.field_label First Shown
-		= episode.first_shown
-%p
-	.field_label Synopsis
-	= episode.synopsis
+	= render partial: "home/season", collection: seasons
 
-- session[:episode_id] = episode.id
+- if user_signed_in?
+	= link_to "Add cast or crew", new_episode_participant_path(episode)
 
 - unless actors.empty?
 	%h3 Cast
 	%table
 		%tr
-			%th Character
-			%th Actor's name
-			%th
-			%th
+			%th.column_title Character
+			%th.column_title Actor's name
+			%th.admin_col
+			%th.admin_col
 		= render partial: "actor", collection: actors
 
 - unless artisans.empty?
 	%h3 Crew
 	%table
 		%tr
-			%th Position
-			%th Name
-			%th
-			%th
+			%th.column_title Position
+			%th.column_title Name
+			%th.admin_col
+			%th.admin_col
 		= render partial: "artisan", collection: artisans
-
-- if user_signed_in?
-	= link_to "Add cast or crew", new_episode_participant_path(episode)

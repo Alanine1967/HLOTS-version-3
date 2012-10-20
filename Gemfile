@@ -7,6 +7,8 @@ gem "haml-rails"
 gem "jquery-rails"
 gem 'thin'
 gem 'decent_exposure'
+gem 'bourbon'
+gem 'rack-pjax'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

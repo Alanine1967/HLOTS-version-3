@@ -1,11 +1,12 @@
 class SeasonsController < ApplicationController
   before_filter :authenticate_user!, except: :show
+  expose(:seasons)
   expose(:season)
-  expose(:episodes) { season.episodes }
+  expose(:episodes)
 
   def update
     if season.save
-      redirect_to seasons_url, notice: "Season successfully updated!"
+      redirect_to root_url, notice: "Season successfully updated!"
     else
       redirect_to action: "edit", alert: "Edit failed!"
     end
@@ -21,6 +22,6 @@ class SeasonsController < ApplicationController
   
   def destroy
     season.destroy
-    redirect_to seasons_url, notice: "Season deleted!"
+    redirect_to root_url, notice: "Season deleted!"
   end
 end
