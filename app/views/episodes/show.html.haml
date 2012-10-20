@@ -1,6 +1,13 @@
 - content_for :sidebar do
 	= render partial: "home/season", collection: seasons
 
+%h1= "Season #{episode.season_id}"
+.field_label= "Episode #{episode.number}"
+.field_label= "#{episode.title}"
+.field_label= " First shown on #{episode.first_shown}"
+.field_label Synopsis
+=episode.synopsis
+
 - if user_signed_in?
 	= link_to "Add cast or crew", new_episode_participant_path(episode)
 
