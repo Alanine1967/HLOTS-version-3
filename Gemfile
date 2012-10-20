@@ -8,7 +8,7 @@ gem "jquery-rails"
 gem 'thin'
 gem 'decent_exposure'
 gem 'bourbon'
-gem 'rack-pjax'
+gem 'pjax_rails'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
