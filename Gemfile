@@ -9,7 +9,7 @@ gem 'thin'
 gem 'decent_exposure'
 gem 'bourbon'
 gem 'pjax_rails'
-gem 'activeadmin'
+gem 'activeadmin', git: 'https://github.com/gregbell/active_admin.git'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
