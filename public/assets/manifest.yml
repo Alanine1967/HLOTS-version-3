@@ -6,7 +6,9 @@ graveyard.jpg: graveyard-f57a2721fef28843c9f8155e00b69756.jpg
 rails.png: rails-be8732dac73d845ac5b142c8fb5f9fb0.png
 sign.jpg: sign-442dcc7633d2c07c9afbcfed6976b01a.jpg
 the_board.jpg: the_board-e23a31caa551b3764443c617ebd46ecb.jpg
+active_admin.js: active_admin-aaaadc369668fe1ddbc4afc69732f67f.js
 application.js: application-f081f9bd83f724361a7d567393923cf3.js
+active_admin.css: active_admin-1eb7b9fe8c0306f69ffc9dad916fb1ab.css
 application.css: application-424dd4206c688d9b7998286678459a04.css
 active_admin/admin_notes_icon.png: active_admin/admin_notes_icon-04bd616ed9d1ff51d7a53422d4caf510.png
 active_admin/datepicker/datepicker-header-bg.png: active_admin/datepicker/datepicker-header-bg-5f452fde9ca93c1fe7e9d47f0a3ece6a.png
@@ -20,3 +22,4 @@ active_admin/nested_menu_arrow_dark.gif: active_admin/nested_menu_arrow_dark-f9f
 active_admin/orderable.png: active_admin/orderable-d9e1503253eff94adee978d6f43f2409.png
 active_admin/application.js: active_admin/application-5a796ebfa33734f4a5bdc90346bb4ddc.js
 active_admin/pages/application.js: active_admin/pages/application-de3951344ec2c98e491b2ac9abc90edb.js
+active_admin/print.css: active_admin/print-7b347ff6243b03b0ea5615a7c624e027.css
