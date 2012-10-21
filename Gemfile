@@ -9,6 +9,7 @@ gem 'thin'
 gem 'decent_exposure'
 gem 'bourbon'
 gem 'pjax_rails'
+gem 'activeadmin'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -24,7 +25,6 @@ end
 
 group :test do
   gem 'sqlite3'
-  gem 'thin'
   gem "rspec-rails", ">= 2.0.1"
   gem "capybara"
   gem 'factory_girl_rails'

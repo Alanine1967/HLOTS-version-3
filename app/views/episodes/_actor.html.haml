@@ -1,8 +1,3 @@
 %tr
 %td.table_content= actor.role
 %td.table_content= link_to full_name(actor), participant_path(actor)
-
-- if user_signed_in?
-	%td.admin_col= link_to "Edit", edit_participant_path(actor)
-	%td.admin_col= link_to "Delete", actor, method: :delete,
-															confirm: "Are you sure?"
