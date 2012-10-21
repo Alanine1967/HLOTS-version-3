@@ -9,10 +9,10 @@ gem 'thin'
 gem 'decent_exposure'
 gem 'bourbon'
 gem 'pjax_rails'
-gem 'activeadmin', git: 'https://github.com/gregbell/active_admin.git'
+gem 'activeadmin'
+gem 'sass-rails',   '~> 3.2.3'
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
