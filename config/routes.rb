@@ -1,12 +1,8 @@
 HomicideSite::Application.routes.draw do
   ActiveAdmin.routes(self)
-
   devise_for :admin_users, ActiveAdmin::Devise.config
-
-  authenticated :user do
-    root to: "home#home"
-  end
-  
+  match '*a', to: 'errors#routing'
+  match 'monitor', to: 'static#monitor'
   root to: "home#home"
 
   resources :seasons, except: [:index], shallow: true do
